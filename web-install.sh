@@ -3,11 +3,11 @@
 
 make_dir () {
     if [ ! -d $1 ]; then
-        if ! mkdir $1; then            
+        if ! mkdir $1; then
             printf "\n Failed to create dir %s" "$1";
             exit 1
         fi
-    fi    
+    fi
 }
 
 command_exists() {
@@ -36,5 +36,4 @@ cd $TARGET
 echo "Now we download and execute the build script"
 echo ""
 
-bash <(curl -s https://raw.githubusercontent.com/markus-perl/ffmpeg-build-script/master/build-ffmpeg) --build
-
+bash <(curl -s https://raw.githubusercontent.com/aifreedom/ffmpeg-build-script/fix-xvidcore/build-ffmpeg) --build
